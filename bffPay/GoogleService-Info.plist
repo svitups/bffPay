@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>607761006316-n1ikpabsk2hbh7hu3pdud3iioi3irir7.apps.googleusercontent.com</string>
+	<string>607761006316-rt5e56nd3k8cpjpebbom4jc6sakklgdr.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.607761006316-n1ikpabsk2hbh7hu3pdud3iioi3irir7</string>
+	<string>com.googleusercontent.apps.607761006316-rt5e56nd3k8cpjpebbom4jc6sakklgdr</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAbfZFuYLEgnGwjeTc3HW9qN3z6THyUU48</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.bffPay.bffPay</string>
+	<string>com.svitups.bffPay</string>
 	<key>PROJECT_ID</key>
 	<string>bffpay-43b32</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:607761006316:ios:b1c400ed1ac753dbfa2fc9</string>
+	<string>1:607761006316:ios:89d6996693bf9e68fa2fc9</string>
 </dict>
 </plist>
