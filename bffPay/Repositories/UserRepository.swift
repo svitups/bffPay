@@ -56,6 +56,7 @@ class UserRepository: ObservableObject {
     }
 
     func isExist(with userId: String, completion: @escaping (Result<UserInfo?, Error>) -> Void) {
+        print("Checking if user exists: \(userId)")
         store.collection(path)
             .whereField("userId", isEqualTo: userId)
             .addSnapshotListener { querySnapshot, error in
@@ -79,6 +80,7 @@ class UserRepository: ObservableObject {
     }
 
     func add(_ user: UserInfo) {
+        print("Adding user to Firestore: \(user.userId)")
         do {
             var newUser = user
             newUser.id = userId

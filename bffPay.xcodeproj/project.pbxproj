@@ -17,9 +17,9 @@
 		8044A10429EEE05C00493B7F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8044A10329EEE05C00493B7F /* FirebaseFirestoreSwift */; };
 		8044A10629EEE0AC00493B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044A10529EEE0AC00493B7F /* AppDelegate.swift */; };
 		8044A10929EEE1E800493B7F /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8044A10829EEE1E800493B7F /* GoogleSignInSwift */; };
+		804E859029F40B4B00CA9A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804E858F29F40B4B00CA9A55 /* GoogleService-Info.plist */; };
 		809265D829F2B2EB001C36C6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265D729F2B2EB001C36C6 /* AuthView.swift */; };
 		809265DB29F2B3D9001C36C6 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 809265DA29F2B3D9001C36C6 /* SwiftUIFontIcon */; };
-		809265DD29F2B69D001C36C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 809265DC29F2B69D001C36C6 /* GoogleService-Info.plist */; };
 		809265E029F2B710001C36C6 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265DF29F2B710001C36C6 /* UserRepository.swift */; };
 		809265E329F2B73C001C36C6 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265E229F2B73C001C36C6 /* UserInfo.swift */; };
 		809265E529F2B951001C36C6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265E429F2B951001C36C6 /* AuthService.swift */; };
@@ -29,14 +29,15 @@
 
 /* Begin PBXFileReference section */
 		8006470229F2FE5600D5AB55 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8006470629F31C1A00D5AB55 /* bffPay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bffPay.entitlements; sourceTree = "<group>"; };
 		8044A0E629EED5C500493B7F /* bffPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bffPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8044A0E929EED5C500493B7F /* bffPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bffPayApp.swift; sourceTree = "<group>"; };
 		8044A0EB29EED5C500493B7F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8044A0ED29EED5C600493B7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8044A0F029EED5C600493B7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8044A10529EEE0AC00493B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		804E858F29F40B4B00CA9A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		809265D729F2B2EB001C36C6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
-		809265DC29F2B69D001C36C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		809265DF29F2B710001C36C6 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		809265E229F2B73C001C36C6 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		809265E429F2B951001C36C6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -97,8 +98,9 @@
 				8044A0E929EED5C500493B7F /* bffPayApp.swift */,
 				8044A10529EEE0AC00493B7F /* AppDelegate.swift */,
 				8044A0ED29EED5C600493B7F /* Assets.xcassets */,
-				809265DC29F2B69D001C36C6 /* GoogleService-Info.plist */,
 				809265EA29F2BED4001C36C6 /* Info.plist */,
+				804E858F29F40B4B00CA9A55 /* GoogleService-Info.plist */,
+				8006470629F31C1A00D5AB55 /* bffPay.entitlements */,
 				8044A0EF29EED5C600493B7F /* Preview Content */,
 			);
 			path = bffPay;
@@ -242,7 +244,7 @@
 			files = (
 				8044A0F129EED5C600493B7F /* Preview Assets.xcassets in Resources */,
 				8044A0EE29EED5C600493B7F /* Assets.xcassets in Resources */,
-				809265DD29F2B69D001C36C6 /* GoogleService-Info.plist in Resources */,
+				804E859029F40B4B00CA9A55 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,10 +390,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = bffPay/bffPay.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"bffPay/Preview Content\"";
-				DEVELOPMENT_TEAM = ZQ532X6DQG;
+				DEVELOPMENT_TEAM = SB3RMSAWRB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bffPay/Info.plist;
@@ -406,7 +409,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bffPay.bffPay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.svitups.bffPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -422,10 +425,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = bffPay/bffPay.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"bffPay/Preview Content\"";
-				DEVELOPMENT_TEAM = ZQ532X6DQG;
+				DEVELOPMENT_TEAM = SB3RMSAWRB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bffPay/Info.plist;
@@ -440,7 +444,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bffPay.bffPay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.svitups.bffPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
