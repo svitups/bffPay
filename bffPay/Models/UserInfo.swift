@@ -10,8 +10,7 @@ import FirebaseFirestoreSwift
 
 struct UserInfo: Identifiable, Codable, Equatable {
     @DocumentID var id: String?
-    var userId: String = ""
+    var userID: String = ""
     var displayName: String = ""
     var email: String = ""
-//    var rooms:
 }
