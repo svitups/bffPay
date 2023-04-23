@@ -80,7 +80,7 @@ class UserRepository: ObservableObject {
     }
 
     func add(_ user: UserInfo) {
-        print("Adding user to Firestore: \(user.userId)")
+        print("Adding user to Firestore: \(user.userID)")
         do {
             var newUser = user
             newUser.id = userId

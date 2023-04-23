@@ -17,6 +17,15 @@
 		8044A10429EEE05C00493B7F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8044A10329EEE05C00493B7F /* FirebaseFirestoreSwift */; };
 		8044A10629EEE0AC00493B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044A10529EEE0AC00493B7F /* AppDelegate.swift */; };
 		8044A10929EEE1E800493B7F /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8044A10829EEE1E800493B7F /* GoogleSignInSwift */; };
+		8045F4DE29F4293D002F9CB5 /* PartyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4DD29F4293D002F9CB5 /* PartyRowView.swift */; };
+		8045F4E129F4355B002F9CB5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4E029F4355B002F9CB5 /* SettingsView.swift */; };
+		8045F4E329F58EEF002F9CB5 /* CreatePartyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4E229F58EEF002F9CB5 /* CreatePartyView.swift */; };
+		8045F4E529F591ED002F9CB5 /* PartyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4E429F591ED002F9CB5 /* PartyListViewModel.swift */; };
+		8045F4E729F59228002F9CB5 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4E629F59228002F9CB5 /* Party.swift */; };
+		8045F4EB29F59663002F9CB5 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4EA29F59663002F9CB5 /* Transaction.swift */; };
+		8045F4EF29F599CC002F9CB5 /* PartyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4EE29F599CC002F9CB5 /* PartyRepository.swift */; };
+		8045F4F229F59C60002F9CB5 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 8045F4F129F59C60002F9CB5 /* FirebasePerformance */; };
+		8045F4F429F5B193002F9CB5 /* PartyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4F329F5B193002F9CB5 /* PartyViewModel.swift */; };
 		804E859029F40B4B00CA9A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804E858F29F40B4B00CA9A55 /* GoogleService-Info.plist */; };
 		809265D829F2B2EB001C36C6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265D729F2B2EB001C36C6 /* AuthView.swift */; };
 		809265DB29F2B3D9001C36C6 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 809265DA29F2B3D9001C36C6 /* SwiftUIFontIcon */; };
@@ -36,6 +45,14 @@
 		8044A0ED29EED5C600493B7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8044A0F029EED5C600493B7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8044A10529EEE0AC00493B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8045F4DD29F4293D002F9CB5 /* PartyRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRowView.swift; sourceTree = "<group>"; };
+		8045F4E029F4355B002F9CB5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8045F4E229F58EEF002F9CB5 /* CreatePartyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyView.swift; sourceTree = "<group>"; };
+		8045F4E429F591ED002F9CB5 /* PartyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyListViewModel.swift; sourceTree = "<group>"; };
+		8045F4E629F59228002F9CB5 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+		8045F4EA29F59663002F9CB5 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		8045F4EE29F599CC002F9CB5 /* PartyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRepository.swift; sourceTree = "<group>"; };
+		8045F4F329F5B193002F9CB5 /* PartyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewModel.swift; sourceTree = "<group>"; };
 		804E858F29F40B4B00CA9A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		809265D729F2B2EB001C36C6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		809265DF29F2B710001C36C6 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -53,6 +70,7 @@
 			files = (
 				8044A10029EEE05C00493B7F /* FirebaseAuth in Frameworks */,
 				8044A10229EEE05C00493B7F /* FirebaseCrashlytics in Frameworks */,
+				8045F4F229F59C60002F9CB5 /* FirebasePerformance in Frameworks */,
 				8044A10429EEE05C00493B7F /* FirebaseFirestoreSwift in Frameworks */,
 				809265DB29F2B3D9001C36C6 /* SwiftUIFontIcon in Frameworks */,
 				8044A10929EEE1E800493B7F /* GoogleSignInSwift in Frameworks */,
@@ -75,6 +93,7 @@
 			children = (
 				8044A0E829EED5C500493B7F /* bffPay */,
 				8044A0E729EED5C500493B7F /* Products */,
+				8045F4F029F59C60002F9CB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				809265E229F2B73C001C36C6 /* UserInfo.swift */,
+				8045F4E629F59228002F9CB5 /* Party.swift */,
+				8045F4EA29F59663002F9CB5 /* Transaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -125,6 +146,8 @@
 		8044A0F829EEDA0B00493B7F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				8045F4E429F591ED002F9CB5 /* PartyListViewModel.swift */,
+				8045F4F329F5B193002F9CB5 /* PartyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -132,6 +155,8 @@
 		8044A0F929EEDA1300493B7F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8045F4DF29F43554002F9CB5 /* Settings */,
+				8045F4DC29F42930002F9CB5 /* Parties */,
 				8006470129F2FE4A00D5AB55 /* Home */,
 				809265D429F2B2BA001C36C6 /* Auth */,
 				8044A0EB29EED5C500493B7F /* MainView.swift */,
@@ -156,6 +181,30 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		8045F4DC29F42930002F9CB5 /* Parties */ = {
+			isa = PBXGroup;
+			children = (
+				8045F4DD29F4293D002F9CB5 /* PartyRowView.swift */,
+				8045F4E229F58EEF002F9CB5 /* CreatePartyView.swift */,
+			);
+			path = Parties;
+			sourceTree = "<group>";
+		};
+		8045F4DF29F43554002F9CB5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8045F4E029F4355B002F9CB5 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8045F4F029F59C60002F9CB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		809265D429F2B2BA001C36C6 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				809265DF29F2B710001C36C6 /* UserRepository.swift */,
+				8045F4EE29F599CC002F9CB5 /* PartyRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -194,6 +244,7 @@
 				8044A10329EEE05C00493B7F /* FirebaseFirestoreSwift */,
 				8044A10829EEE1E800493B7F /* GoogleSignInSwift */,
 				809265DA29F2B3D9001C36C6 /* SwiftUIFontIcon */,
+				8045F4F129F59C60002F9CB5 /* FirebasePerformance */,
 			);
 			productName = bffPay;
 			productReference = 8044A0E629EED5C500493B7F /* bffPay.app */;
@@ -256,13 +307,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8044A10629EEE0AC00493B7F /* AppDelegate.swift in Sources */,
+				8045F4E729F59228002F9CB5 /* Party.swift in Sources */,
+				8045F4EF29F599CC002F9CB5 /* PartyRepository.swift in Sources */,
+				8045F4EB29F59663002F9CB5 /* Transaction.swift in Sources */,
+				8045F4E529F591ED002F9CB5 /* PartyListViewModel.swift in Sources */,
 				809265E729F2BCF2001C36C6 /* UIApplication+UIViewController.swift in Sources */,
+				8045F4DE29F4293D002F9CB5 /* PartyRowView.swift in Sources */,
 				8044A0EC29EED5C500493B7F /* MainView.swift in Sources */,
+				8045F4E329F58EEF002F9CB5 /* CreatePartyView.swift in Sources */,
+				8045F4F429F5B193002F9CB5 /* PartyViewModel.swift in Sources */,
 				8006470329F2FE5600D5AB55 /* HomeView.swift in Sources */,
 				809265E929F2BD2B001C36C6 /* GIDConfiguration+Ext.swift in Sources */,
 				809265E329F2B73C001C36C6 /* UserInfo.swift in Sources */,
 				809265D829F2B2EB001C36C6 /* AuthView.swift in Sources */,
 				809265E029F2B710001C36C6 /* UserRepository.swift in Sources */,
+				8045F4E129F4355B002F9CB5 /* SettingsView.swift in Sources */,
 				8044A0EA29EED5C500493B7F /* bffPayApp.swift in Sources */,
 				809265E529F2B951001C36C6 /* AuthService.swift in Sources */,
 			);
@@ -525,6 +584,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8044A10729EEE1E800493B7F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		8045F4F129F59C60002F9CB5 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8044A0FE29EEE05C00493B7F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
 		};
 		809265DA29F2B3D9001C36C6 /* SwiftUIFontIcon */ = {
 			isa = XCSwiftPackageProductDependency;

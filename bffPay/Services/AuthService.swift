@@ -34,6 +34,8 @@ class AuthService: ObservableObject {
             }
     }
     
+    // MARK: Sing in methods
+    
     func handleSignInWithGoogle() {
         do {
             let config = GIDConfiguration(clientID: FirebaseApp.app()?.options.clientID ?? "")
@@ -110,6 +112,8 @@ class AuthService: ObservableObject {
         }
     }
     
+    // MARK: Other
+    
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -135,12 +139,14 @@ class AuthService: ObservableObject {
             switch result {
             case .success(let userInfo):
                 if userInfo == nil {
-                    UserRepository.shared.add(UserInfo(userId: user.uid, displayName: user.displayName ?? "No name", email: email))
+                    UserRepository.shared.add(UserInfo(userID: user.uid, displayName: user.displayName ?? "No name", email: email))
                 }
             case .failure(let error): print(error.localizedDescription)
             }
         }
     }
+    
+    // MARK: Apple auth helpers
     
     private func randomNonceString(length: Int = 32) -> String {
         precondition(length > 0)
