@@ -12,28 +12,54 @@ struct CreatePartyView: View {
     
     @EnvironmentObject private var partyListVM: PartyListViewModel
     
+    @State private var name: String = ""
+    @State private var description: String = ""
+    @State private var currency: String = ""
+    @State private var selectedCategory: PartyCategory = .couple
+    
     var body: some View {
         NavigationView {
-            ScrollView(showsIndicators: false) {
+            Form {
                 VStack {
-                    //                    Section("Party") {
-                    //                        TextField("Name", text: $userInfoViewModel.userInfo.displayName)
-                    //                            .multilineTextAlignment(.trailing)
-                    //                    }
-                    //                    Section("Participants (0/30)") {
-                    //                        <#code#>
-                    //                    }
+                    TextField("Name", text: $name)
+                    
+                    TextField("Description (Optional)", text: $description)
+                    
+                    TextField("Currency", text: $currency)
+                    
+                    Picker("Category", selection: $selectedCategory) {
+                        ForEach(PartyCategory.allCases, id: \.self) { category in
+                            Text(category.rawValue.capitalized).tag(category)
+                        }
+                    }
+                }
+                .navigationTitle("New Party")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        cancelButton
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        createButton
+                    }
                 }
             }
-            .navigationTitle("New party")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    cancelButton
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    createButton
-                }
+        }
+    }
+    
+    
+    private func createPartyAction() {
+        if name.isEmpty || currency.isEmpty {
+            showingAlert = true
+        } else {
+            let party = Party(name: name,
+                              description: description,
+                              currency: currency,
+                              category: selectedCategory,
+                              ownerUserID: "V5zmJHC038Ri1jt8UwLpG51uXYD2",
+                              participantIDs: ["V5zmJHC038Ri1jt8UwLpG51uXYD2"])
+            partyListVM.add(party) {
+                presentationMode.wrappedValue.dismiss()
             }
         }
     }
@@ -46,27 +72,14 @@ struct CreatePartyView: View {
         }
     }
     
-    @State private var isCreatingParty = false
+    @State private var showingAlert = false
     
     private var createButton: some View {
-        Button {
-            isCreatingParty = true
-            
-            partyListVM.add(Party(name: "Test",
-                                  description: "test descp",
-                                  currency: "USD",
-                                  category: .couple,
-                                  ownerUserID: "V5zmJHC038Ri1jt8UwLpG51uXYD2",
-                                  participantIDs: ["V5zmJHC038Ri1jt8UwLpG51uXYD2"])) {
-                isCreatingParty = false
-                presentationMode.wrappedValue.dismiss()
-            }
-        } label: {
-            if isCreatingParty {
-                ProgressView()
-            } else {
-                Text("Create")
-            }
+        Button(action: createPartyAction) {
+            Text("Create")
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Error"), message: Text("Name and Currency fields are required."), dismissButton: .default(Text("OK")))
         }
     }
 }
@@ -76,3 +89,4 @@ struct CreatePartyView_Previews: PreviewProvider {
         CreatePartyView()
     }
 }
+

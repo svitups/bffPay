@@ -14,7 +14,7 @@ struct PartyRowView: View {
 //    var color: Color?
 //    var name: String
 //    var description: String
-//    var notificationsCount: Int
+    var notificationsCount: Int = 0
     
     var body: some View {
         HStack(alignment: .center) {
@@ -29,14 +29,20 @@ struct PartyRowView: View {
                         .font(.callout)
 //                        .bold()
                 }
-                Text(vm.party.description ?? "No description")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                if let description = vm.party.description, !description.isEmpty {
+                    Text(description)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                } else {
+                    Text("No description")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
             }
             Spacer()
             
             HStack(alignment: .center) {
-//                if notificationsCount > 0 {
+                if notificationsCount > 0 {
                     Circle()
                         .frame(width: 18, height: 18)
                         .foregroundColor(Color(.systemPurple).opacity(0.8))
@@ -45,7 +51,7 @@ struct PartyRowView: View {
                                 .font(.caption2)
     //                            .foregroundColor(.gray)
                         }
-//                }
+                }
                 Image(systemName: "chevron.forward")
                     .resizable()
                     .scaledToFit()

@@ -13,7 +13,7 @@ struct Party: Codable {
     var name: String
     var description: String?
     var currency: String
-    var category: Category
+    var category: PartyCategory
     var ownerUserID: String
     var participantIDs: [String]
 
@@ -22,7 +22,7 @@ struct Party: Codable {
     }
 }
 
-enum Category: String, Codable {
-    case couple, sharedHouse = "Shared House", event, project, trip, other
+enum PartyCategory: String, Codable, CaseIterable {
+    case couple, roommates, event, project, trip, other
 }
 

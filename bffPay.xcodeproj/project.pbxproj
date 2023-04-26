@@ -34,6 +34,9 @@
 		809265E529F2B951001C36C6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265E429F2B951001C36C6 /* AuthService.swift */; };
 		809265E729F2BCF2001C36C6 /* UIApplication+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265E629F2BCF2001C36C6 /* UIApplication+UIViewController.swift */; };
 		809265E929F2BD2B001C36C6 /* GIDConfiguration+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265E829F2BD2B001C36C6 /* GIDConfiguration+Ext.swift */; };
+		80B1B0E929F9A71800915CB4 /* PartyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0E829F9A71800915CB4 /* PartyDetailsView.swift */; };
+		80B1B0ED29F9A8B600915CB4 /* CustomPlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0EC29F9A8B600915CB4 /* CustomPlusButton.swift */; };
+		80B1B0F029F9A98E00915CB4 /* CreateTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0EF29F9A98E00915CB4 /* CreateTransactionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		809265E629F2BCF2001C36C6 /* UIApplication+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+UIViewController.swift"; sourceTree = "<group>"; };
 		809265E829F2BD2B001C36C6 /* GIDConfiguration+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GIDConfiguration+Ext.swift"; sourceTree = "<group>"; };
 		809265EA29F2BED4001C36C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		80B1B0E829F9A71800915CB4 /* PartyDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDetailsView.swift; sourceTree = "<group>"; };
+		80B1B0EC29F9A8B600915CB4 /* CustomPlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlusButton.swift; sourceTree = "<group>"; };
+		80B1B0EF29F9A98E00915CB4 /* CreateTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,8 @@
 		8044A0F929EEDA1300493B7F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				80B1B0EE29F9A97A00915CB4 /* Transactions */,
+				80B1B0EA29F9A89D00915CB4 /* Custom */,
 				8045F4DF29F43554002F9CB5 /* Settings */,
 				8045F4DC29F42930002F9CB5 /* Parties */,
 				8006470129F2FE4A00D5AB55 /* Home */,
@@ -186,6 +194,7 @@
 			children = (
 				8045F4DD29F4293D002F9CB5 /* PartyRowView.swift */,
 				8045F4E229F58EEF002F9CB5 /* CreatePartyView.swift */,
+				80B1B0E829F9A71800915CB4 /* PartyDetailsView.swift */,
 			);
 			path = Parties;
 			sourceTree = "<group>";
@@ -220,6 +229,30 @@
 				8045F4EE29F599CC002F9CB5 /* PartyRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		80B1B0EA29F9A89D00915CB4 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				80B1B0EB29F9A8A200915CB4 /* Buttons */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		80B1B0EB29F9A8A200915CB4 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				80B1B0EC29F9A8B600915CB4 /* CustomPlusButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		80B1B0EE29F9A97A00915CB4 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				80B1B0EF29F9A98E00915CB4 /* CreateTransactionView.swift */,
+			);
+			path = Transactions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80B1B0ED29F9A8B600915CB4 /* CustomPlusButton.swift in Sources */,
 				8044A10629EEE0AC00493B7F /* AppDelegate.swift in Sources */,
 				8045F4E729F59228002F9CB5 /* Party.swift in Sources */,
 				8045F4EF29F599CC002F9CB5 /* PartyRepository.swift in Sources */,
@@ -315,6 +349,7 @@
 				8045F4DE29F4293D002F9CB5 /* PartyRowView.swift in Sources */,
 				8044A0EC29EED5C500493B7F /* MainView.swift in Sources */,
 				8045F4E329F58EEF002F9CB5 /* CreatePartyView.swift in Sources */,
+				80B1B0F029F9A98E00915CB4 /* CreateTransactionView.swift in Sources */,
 				8045F4F429F5B193002F9CB5 /* PartyViewModel.swift in Sources */,
 				8006470329F2FE5600D5AB55 /* HomeView.swift in Sources */,
 				809265E929F2BD2B001C36C6 /* GIDConfiguration+Ext.swift in Sources */,
@@ -323,6 +358,7 @@
 				809265E029F2B710001C36C6 /* UserRepository.swift in Sources */,
 				8045F4E129F4355B002F9CB5 /* SettingsView.swift in Sources */,
 				8044A0EA29EED5C500493B7F /* bffPayApp.swift in Sources */,
+				80B1B0E929F9A71800915CB4 /* PartyDetailsView.swift in Sources */,
 				809265E529F2B951001C36C6 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
