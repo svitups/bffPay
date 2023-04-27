@@ -17,18 +17,17 @@ struct CustomPlusButton: View {
             action()
         } label: {
             Circle()
-                .frame(width: 46, height: 46)
+                .frame(width: 50, height: 50)
                 .foregroundColor(Color(.systemPurple))
                 .overlay {
                     Image(systemName: "plus")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 24, height: 24)
                         .foregroundColor(.white)
                 }
         }
         .padding()
-        
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class PartyViewModel: ObservableObject, Identifiable {
-    private let partyRepo = PartyRepository()
+//    private let partyRepo = PartyRepository()
     @Published var party: Party
     
     var id = ""

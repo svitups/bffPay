@@ -18,19 +18,18 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 0) {
-                    ForEach(partyListVM.partyViewModels) { partyVM in
-                        NavigationLink {
-                            
+                    if partyListVM.partyViewModels.isEmpty {
+                        Text("No parties found, tap on plus button to add a party!")
+                            .font(.title3)
+                            .multilineTextAlignment(.center)
+                            .padding()                    } else {
+                        ForEach(partyListVM.partyViewModels) { partyVM in
+                            NavigationLink {
                                 PartyDetailsView(vm: partyVM)
-                            
-                        } label: {
-                            PartyRowView(vm: partyVM)
+                            } label: {
+                                PartyRowView(vm: partyVM)
+                            }
                         }
-                        
-                        
-//                        if partyVM == partyListVM.partyViewModels.last {
-//                            Divider()
-//                        }
                     }
                 }
             }
@@ -40,7 +39,9 @@ struct HomeView: View {
             }, alignment: .bottomTrailing)
             .navigationTitle("bffPay")
             .toolbar {
-                settingsNavigationButton
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    settingsNavigationButton
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showSettings) {
@@ -58,13 +59,11 @@ struct HomeView: View {
     
     @State private var showSettings = false
     
-    private var settingsNavigationButton: ToolbarItem<(), Button<Image>> {
-        ToolbarItem(placement: .navigationBarTrailing) {
-            Button {
-                showSettings = true
-            } label: {
-                Image(systemName: "gear")
-            }
+    private var settingsNavigationButton: some View {
+        Button {
+            showSettings = true
+        } label: {
+            Image(systemName: "gear")
         }
     }
 }

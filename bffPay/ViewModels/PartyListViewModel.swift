@@ -9,14 +9,14 @@ import Foundation
 import Combine
 
 final class PartyListViewModel: ObservableObject {
-    @Published var partiesRepo = PartyRepository()
+//    @Published var partiesRepo = PartyRepository()
     @Published var partyViewModels = [PartyViewModel]()
     @Published var isLoading = true
     
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        partiesRepo.$parties
+        PartyRepository.shared.$parties
             .receive(on: DispatchQueue.main)
             .map { parties in
                 parties.map(PartyViewModel.init)
@@ -29,19 +29,19 @@ final class PartyListViewModel: ObservableObject {
     }
     
     func add(_ party: Party, completion: @escaping () -> Void) {
-        partiesRepo.create(party) {
+        PartyRepository.shared.create(party) {
             completion()
         }
     }
     
     func update(_ party: Party, completion: @escaping () -> Void) {
-        partiesRepo.update(party) {
+        PartyRepository.shared.update(party) {
             completion()
         }
     }
     
     func delete(_ party: Party, completion: @escaping () -> Void) {
-        partiesRepo.delete(party) {
+        PartyRepository.shared.delete(party) {
             completion()
         }
     }

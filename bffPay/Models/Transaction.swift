@@ -8,11 +8,13 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Transaction {
+struct Transaction: Codable, Identifiable {
     @DocumentID var id: String?
     var title: String
-    var amoutn: Int
+    var amount: Double
+    var currency: String
     var date: Date
     var paidByID: String
     var paidForIDs: [String]
+    var partyID: String
 }

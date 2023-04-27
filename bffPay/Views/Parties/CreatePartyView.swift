@@ -15,36 +15,66 @@ struct CreatePartyView: View {
     @State private var name: String = ""
     @State private var description: String = ""
     @State private var currency: String = ""
-    @State private var selectedCategory: PartyCategory = .couple
+    @State private var selectedCategory: PartyCategory = .roommates
+    
+    @State private var selectedAction: PartyAction = .create
+    
+    @State private var invitationLink: String = ""
     
     var body: some View {
         NavigationView {
-            Form {
-                VStack {
-                    TextField("Name", text: $name)
-                    
-                    TextField("Description (Optional)", text: $description)
-                    
-                    TextField("Currency", text: $currency)
-                    
-                    Picker("Category", selection: $selectedCategory) {
-                        ForEach(PartyCategory.allCases, id: \.self) { category in
-                            Text(category.rawValue.capitalized).tag(category)
-                        }
+            VStack {
+                Picker("", selection: $selectedAction) {
+                    ForEach(PartyAction.allCases, id: \.self) { action in
+                        Text(action.rawValue.capitalized).tag(action)
                     }
+                }.pickerStyle(SegmentedPickerStyle())
+                    .padding(.horizontal)
+                
+                
+                dynamicForm
+                
+            }
+            .navigationTitle("New Party")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    cancelButton
                 }
-                .navigationTitle("New Party")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        cancelButton
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        createButton
-                    }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    actionButton
                 }
             }
         }
+    }
+    
+    @ViewBuilder
+    private var dynamicForm: some View {
+        TabView(selection: $selectedAction) {
+            ForEach(PartyAction.allCases, id: \.self) { action in
+                Form {
+                    LazyVStack {
+                        switch selectedAction {
+                        case .create:
+                            TextField("Name", text: $name)
+                            
+                            TextField("Description (Optional)", text: $description)
+                            
+                            TextField("Currency", text: $currency)
+                            
+                            Picker("Category", selection: $selectedCategory) {
+                                ForEach(PartyCategory.allCases, id: \.self) { category in
+                                    Text(category.rawValue.capitalized).tag(category)
+                                }
+                            }
+                        case .join:
+                            TextField("Party ID", text: $invitationLink)
+                        }
+                    }
+                }
+                .tag(action)
+            }
+        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
     
     
@@ -56,8 +86,8 @@ struct CreatePartyView: View {
                               description: description,
                               currency: currency,
                               category: selectedCategory,
-                              ownerUserID: "V5zmJHC038Ri1jt8UwLpG51uXYD2",
-                              participantIDs: ["V5zmJHC038Ri1jt8UwLpG51uXYD2"])
+                              ownerUserID: UserRepository.shared.userId,
+                              participants: [UserRepository.shared.userId: UserRepository.shared.userInfo?.displayName ?? "No name"])
             partyListVM.add(party) {
                 presentationMode.wrappedValue.dismiss()
             }
@@ -74,13 +104,45 @@ struct CreatePartyView: View {
     
     @State private var showingAlert = false
     
-    private var createButton: some View {
-        Button(action: createPartyAction) {
-            Text("Create")
+    @State private var errorMessage = ""
+    
+    @ViewBuilder
+    private var actionButton: some View {
+        switch selectedAction {
+        case .create:
+            Button {
+                createPartyAction()
+            } label: {
+                Text("Create")
+            }
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Error"),
+                      message: Text("Name and Currency fields are required."),
+                      dismissButton: .default(Text("OK")))
+            }
+        case .join:
+            Button {
+                PartyRepository.shared.joinParty(with: invitationLink) { result in
+                    switch result {
+                    case .success:
+                        presentationMode.wrappedValue.dismiss()
+                    case .failure(let failure):
+                        errorMessage = failure.localizedDescription
+                    }
+                }
+            } label: {
+                Text("Join")
+            }
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Error"),
+                      message: Text(errorMessage),
+                      dismissButton: .default(Text("OK")))
+            }
         }
-        .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Error"), message: Text("Name and Currency fields are required."), dismissButton: .default(Text("OK")))
-        }
+    }
+    
+    private enum PartyAction: String, CaseIterable {
+        case create, join
     }
 }
 

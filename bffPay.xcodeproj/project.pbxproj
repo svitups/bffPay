@@ -37,6 +37,13 @@
 		80B1B0E929F9A71800915CB4 /* PartyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0E829F9A71800915CB4 /* PartyDetailsView.swift */; };
 		80B1B0ED29F9A8B600915CB4 /* CustomPlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0EC29F9A8B600915CB4 /* CustomPlusButton.swift */; };
 		80B1B0F029F9A98E00915CB4 /* CreateTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0EF29F9A98E00915CB4 /* CreateTransactionView.swift */; };
+		80B1B0F229FAB53A00915CB4 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0F129FAB53A00915CB4 /* TransactionRepository.swift */; };
+		80B1B0F429FABC7100915CB4 /* TransactionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0F329FABC7100915CB4 /* TransactionsListViewModel.swift */; };
+		80B1B0F629FAC10C00915CB4 /* MultiSelectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0F529FAC10C00915CB4 /* MultiSelectionList.swift */; };
+		80B1B0F829FACDB500915CB4 /* TransactionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0F729FACDB400915CB4 /* TransactionDetailsView.swift */; };
+		80B1B0FA29FACDEA00915CB4 /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0F929FACDEA00915CB4 /* TransactionRowView.swift */; };
+		80B1B0FC29FADF4B00915CB4 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0FB29FADF4B00915CB4 /* Double+Ext.swift */; };
+		80B1B0FE29FAE06E00915CB4 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0FD29FAE06E00915CB4 /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +74,13 @@
 		80B1B0E829F9A71800915CB4 /* PartyDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDetailsView.swift; sourceTree = "<group>"; };
 		80B1B0EC29F9A8B600915CB4 /* CustomPlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlusButton.swift; sourceTree = "<group>"; };
 		80B1B0EF29F9A98E00915CB4 /* CreateTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionView.swift; sourceTree = "<group>"; };
+		80B1B0F129FAB53A00915CB4 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+		80B1B0F329FABC7100915CB4 /* TransactionsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListViewModel.swift; sourceTree = "<group>"; };
+		80B1B0F529FAC10C00915CB4 /* MultiSelectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectionList.swift; sourceTree = "<group>"; };
+		80B1B0F729FACDB400915CB4 /* TransactionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsView.swift; sourceTree = "<group>"; };
+		80B1B0F929FACDEA00915CB4 /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
+		80B1B0FB29FADF4B00915CB4 /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
+		80B1B0FD29FAE06E00915CB4 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +168,7 @@
 			children = (
 				8045F4E429F591ED002F9CB5 /* PartyListViewModel.swift */,
 				8045F4F329F5B193002F9CB5 /* PartyViewModel.swift */,
+				80B1B0F329FABC7100915CB4 /* TransactionsListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -177,6 +192,8 @@
 			children = (
 				809265E629F2BCF2001C36C6 /* UIApplication+UIViewController.swift */,
 				809265E829F2BD2B001C36C6 /* GIDConfiguration+Ext.swift */,
+				80B1B0FB29FADF4B00915CB4 /* Double+Ext.swift */,
+				80B1B0FD29FAE06E00915CB4 /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -227,6 +244,7 @@
 			children = (
 				809265DF29F2B710001C36C6 /* UserRepository.swift */,
 				8045F4EE29F599CC002F9CB5 /* PartyRepository.swift */,
+				80B1B0F129FAB53A00915CB4 /* TransactionRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -235,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				80B1B0EB29F9A8A200915CB4 /* Buttons */,
+				80B1B0F529FAC10C00915CB4 /* MultiSelectionList.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -251,6 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				80B1B0EF29F9A98E00915CB4 /* CreateTransactionView.swift */,
+				80B1B0F729FACDB400915CB4 /* TransactionDetailsView.swift */,
+				80B1B0F929FACDEA00915CB4 /* TransactionRowView.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -339,7 +360,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80B1B0F629FAC10C00915CB4 /* MultiSelectionList.swift in Sources */,
+				80B1B0F229FAB53A00915CB4 /* TransactionRepository.swift in Sources */,
 				80B1B0ED29F9A8B600915CB4 /* CustomPlusButton.swift in Sources */,
+				80B1B0F829FACDB500915CB4 /* TransactionDetailsView.swift in Sources */,
 				8044A10629EEE0AC00493B7F /* AppDelegate.swift in Sources */,
 				8045F4E729F59228002F9CB5 /* Party.swift in Sources */,
 				8045F4EF29F599CC002F9CB5 /* PartyRepository.swift in Sources */,
@@ -352,7 +376,10 @@
 				80B1B0F029F9A98E00915CB4 /* CreateTransactionView.swift in Sources */,
 				8045F4F429F5B193002F9CB5 /* PartyViewModel.swift in Sources */,
 				8006470329F2FE5600D5AB55 /* HomeView.swift in Sources */,
+				80B1B0FA29FACDEA00915CB4 /* TransactionRowView.swift in Sources */,
+				80B1B0FC29FADF4B00915CB4 /* Double+Ext.swift in Sources */,
 				809265E929F2BD2B001C36C6 /* GIDConfiguration+Ext.swift in Sources */,
+				80B1B0FE29FAE06E00915CB4 /* Date+Ext.swift in Sources */,
 				809265E329F2B73C001C36C6 /* UserInfo.swift in Sources */,
 				809265D829F2B2EB001C36C6 /* AuthView.swift in Sources */,
 				809265E029F2B710001C36C6 /* UserRepository.swift in Sources */,
@@ -360,6 +387,7 @@
 				8044A0EA29EED5C500493B7F /* bffPayApp.swift in Sources */,
 				80B1B0E929F9A71800915CB4 /* PartyDetailsView.swift in Sources */,
 				809265E529F2B951001C36C6 /* AuthService.swift in Sources */,
+				80B1B0F429FABC7100915CB4 /* TransactionsListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +531,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.svitups.bffPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -538,7 +566,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.svitups.bffPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

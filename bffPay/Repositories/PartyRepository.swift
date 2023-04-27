@@ -5,14 +5,14 @@
 //  Created by Eugene Ned on 23.04.2023.
 //
 
-//import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebasePerformance
 import Combine
 
 class PartyRepository: ObservableObject {
-//    static let shared = PartyRepository()
+    
+    static var shared = PartyRepository()
     
     private let path = "parties"
     private let store = Firestore.firestore()
@@ -25,7 +25,7 @@ class PartyRepository: ObservableObject {
     private let authService = AuthService()
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
+    private init() {
         authService.$user
             .compactMap { user in
                 user?.uid
@@ -41,11 +41,13 @@ class PartyRepository: ObservableObject {
             .store(in: &cancellables)
     }
     
+    // MARK: Basic methods
+    
     func get() {
         let trace = Performance.startTrace(name: "PartiesRepository: fetch all parties for the user")
         isLoading = true
         store.collection(path)
-            .whereField("ownerUserID", isEqualTo: userID)
+            .whereField(FieldPath(["participants", userID]), isGreaterThanOrEqualTo: "")
             .addSnapshotListener { querySnapshot, error in
                 defer {
                     trace?.stop()
@@ -76,7 +78,7 @@ class PartyRepository: ObservableObject {
                 completion()
             }
         } catch {
-                print("Unable to create party: \(error.localizedDescription)")
+            print("Unable to create party: \(error.localizedDescription)")
         }
     }
     
@@ -102,4 +104,62 @@ class PartyRepository: ObservableObject {
             completion()
         }
     }
+    
+    // MARK: Custom methods
+    
+    func getNameOfUser(withID userID: String, in partyID: String) -> String? {
+        if let currentParty = parties.first(where: { $0.id == partyID && $0.participants.keys.contains(userID) }) {
+            return currentParty.participants[userID]
+        }
+        return nil
+    }
+    
+    func joinParty(with partyID: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard !partyID.isEmpty, !userID.isEmpty else {
+            completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Empty partyID or userID"])))
+            return
+        }
+        
+        let partyDocumentReference = store.collection(path).document(partyID)
+        
+        // Retrieve the party document
+        partyDocumentReference.getDocument { [weak self] documentSnapshot, error in
+            if let error = error {
+                print("Error joining party: \(error.localizedDescription)")
+                completion(.failure(error))
+                return
+            }
+            
+            if let document = documentSnapshot, document.exists {
+                if var party = try? document.data(as: Party.self) {
+                    // Check if the user is already a participant
+                    if party.participants.keys.contains(self?.userID ?? "") {
+                        print("User is already a participant in the party.")
+                        completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "User is already a participant in the party"])))
+                        return
+                    }
+                    
+                    // Retrieve user's display name
+                    self?.authService.$user
+                        .compactMap { user in
+                            user?.displayName
+                        }
+                        .sink { displayName in
+                            // Add the current user and their display name to the participants field
+                            party.participants[self?.userID ?? ""] = displayName
+                            
+                            // Update the party using the existing method
+                            self?.update(party) {
+                                completion(.success(()))
+                            }
+                        }
+                        .store(in: &self!.cancellables)
+                }
+            } else {
+                print("Party not found.")
+                completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Party not found"])))
+            }
+        }
+    }
+    
 }

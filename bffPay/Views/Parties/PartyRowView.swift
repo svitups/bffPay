@@ -8,26 +8,21 @@
 import SwiftUI
 
 struct PartyRowView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     
     var vm: PartyViewModel
     
-//    var color: Color?
-//    var name: String
-//    var description: String
     var notificationsCount: Int = 0
     
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
                 HStack {
-//                    if let color = color {
-//                        Circle()
-//                            .foregroundColor(color)
-//                            .frame(width: 4, height: 4)
-//                    }
+                    
                     Text(vm.party.name)
                         .font(.callout)
-//                        .bold()
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                 }
                 if let description = vm.party.description, !description.isEmpty {
                     Text(description)
@@ -49,13 +44,13 @@ struct PartyRowView: View {
                         .overlay {
                             Text(String(Int.random(in: -10...10)))
                                 .font(.caption2)
-    //                            .foregroundColor(.gray)
                         }
                 }
                 Image(systemName: "chevron.forward")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 12, height: 12)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
             }
         }
         .padding()

@@ -8,17 +8,17 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Party: Codable {
+struct Party: Codable, Identifiable {
     @DocumentID var id: String?
     var name: String
     var description: String?
     var currency: String
     var category: PartyCategory
     var ownerUserID: String
-    var participantIDs: [String]
+    var participants: [String: String] // ID: name
 
     enum CodingKeys: String, CodingKey {
-        case id, name, description, currency, category, ownerUserID, participantIDs
+        case id, name, description, currency, category, ownerUserID, participants
     }
 }
 
