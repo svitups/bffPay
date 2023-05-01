@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8006470329F2FE5600D5AB55 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8006470229F2FE5600D5AB55 /* HomeView.swift */; };
+		801EE5B62A00074600DD9ECD /* bffPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801EE5B52A00074600DD9ECD /* bffPayUITests.swift */; };
+		801EE5B82A00074600DD9ECD /* bffPayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801EE5B72A00074600DD9ECD /* bffPayUITestsLaunchTests.swift */; };
+		801EE5C52A00076600DD9ECD /* bffPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801EE5C42A00076600DD9ECD /* bffPayTests.swift */; };
+		801EE5CC2A00116200DD9ECD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 801EE5CB2A00116200DD9ECD /* FirebaseAuth */; };
+		801EE5CE2A00117200DD9ECD /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 801EE5CD2A00117200DD9ECD /* FirebasePerformance */; };
+		801EE5D02A00118E00DD9ECD /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 801EE5CF2A00118E00DD9ECD /* GoogleSignInSwift */; };
+		801EE5D22A00119900DD9ECD /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 801EE5D12A00119900DD9ECD /* FirebaseFirestoreSwift */; };
 		8044A0EA29EED5C500493B7F /* bffPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044A0E929EED5C500493B7F /* bffPayApp.swift */; };
 		8044A0EC29EED5C500493B7F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044A0EB29EED5C500493B7F /* MainView.swift */; };
 		8044A0EE29EED5C600493B7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8044A0ED29EED5C600493B7F /* Assets.xcassets */; };
@@ -28,7 +35,6 @@
 		8045F4F429F5B193002F9CB5 /* PartyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4F329F5B193002F9CB5 /* PartyViewModel.swift */; };
 		804E859029F40B4B00CA9A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804E858F29F40B4B00CA9A55 /* GoogleService-Info.plist */; };
 		809265D829F2B2EB001C36C6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265D729F2B2EB001C36C6 /* AuthView.swift */; };
-		809265DB29F2B3D9001C36C6 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 809265DA29F2B3D9001C36C6 /* SwiftUIFontIcon */; };
 		809265E029F2B710001C36C6 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265DF29F2B710001C36C6 /* UserRepository.swift */; };
 		809265E329F2B73C001C36C6 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265E229F2B73C001C36C6 /* UserInfo.swift */; };
 		809265E529F2B951001C36C6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265E429F2B951001C36C6 /* AuthService.swift */; };
@@ -46,9 +52,31 @@
 		80B1B0FE29FAE06E00915CB4 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B0FD29FAE06E00915CB4 /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		801EE5B92A00074600DD9ECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8044A0DE29EED5C500493B7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8044A0E529EED5C500493B7F;
+			remoteInfo = bffPay;
+		};
+		801EE5C62A00076600DD9ECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8044A0DE29EED5C500493B7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8044A0E529EED5C500493B7F;
+			remoteInfo = bffPay;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		8006470229F2FE5600D5AB55 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8006470629F31C1A00D5AB55 /* bffPay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bffPay.entitlements; sourceTree = "<group>"; };
+		801EE5B32A00074600DD9ECD /* bffPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bffPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		801EE5B52A00074600DD9ECD /* bffPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bffPayUITests.swift; sourceTree = "<group>"; };
+		801EE5B72A00074600DD9ECD /* bffPayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bffPayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		801EE5C22A00076600DD9ECD /* bffPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bffPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		801EE5C42A00076600DD9ECD /* bffPayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bffPayTests.swift; sourceTree = "<group>"; };
 		8044A0E629EED5C500493B7F /* bffPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bffPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8044A0E929EED5C500493B7F /* bffPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bffPayApp.swift; sourceTree = "<group>"; };
 		8044A0EB29EED5C500493B7F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -84,6 +112,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		801EE5B02A00074600DD9ECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		801EE5BF2A00076600DD9ECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801EE5D02A00118E00DD9ECD /* GoogleSignInSwift in Frameworks */,
+				801EE5CE2A00117200DD9ECD /* FirebasePerformance in Frameworks */,
+				801EE5CC2A00116200DD9ECD /* FirebaseAuth in Frameworks */,
+				801EE5D22A00119900DD9ECD /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8044A0E329EED5C500493B7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,7 +138,6 @@
 				8044A10229EEE05C00493B7F /* FirebaseCrashlytics in Frameworks */,
 				8045F4F229F59C60002F9CB5 /* FirebasePerformance in Frameworks */,
 				8044A10429EEE05C00493B7F /* FirebaseFirestoreSwift in Frameworks */,
-				809265DB29F2B3D9001C36C6 /* SwiftUIFontIcon in Frameworks */,
 				8044A10929EEE1E800493B7F /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,10 +153,29 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		801EE5B42A00074600DD9ECD /* bffPayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				801EE5B52A00074600DD9ECD /* bffPayUITests.swift */,
+				801EE5B72A00074600DD9ECD /* bffPayUITestsLaunchTests.swift */,
+			);
+			path = bffPayUITests;
+			sourceTree = "<group>";
+		};
+		801EE5C32A00076600DD9ECD /* bffPayTests */ = {
+			isa = PBXGroup;
+			children = (
+				801EE5C42A00076600DD9ECD /* bffPayTests.swift */,
+			);
+			path = bffPayTests;
+			sourceTree = "<group>";
+		};
 		8044A0DD29EED5C500493B7F = {
 			isa = PBXGroup;
 			children = (
 				8044A0E829EED5C500493B7F /* bffPay */,
+				801EE5B42A00074600DD9ECD /* bffPayUITests */,
+				801EE5C32A00076600DD9ECD /* bffPayTests */,
 				8044A0E729EED5C500493B7F /* Products */,
 				8045F4F029F59C60002F9CB5 /* Frameworks */,
 			);
@@ -121,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				8044A0E629EED5C500493B7F /* bffPay.app */,
+				801EE5B32A00074600DD9ECD /* bffPayUITests.xctest */,
+				801EE5C22A00076600DD9ECD /* bffPayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -279,6 +345,48 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		801EE5B22A00074600DD9ECD /* bffPayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 801EE5BD2A00074600DD9ECD /* Build configuration list for PBXNativeTarget "bffPayUITests" */;
+			buildPhases = (
+				801EE5AF2A00074600DD9ECD /* Sources */,
+				801EE5B02A00074600DD9ECD /* Frameworks */,
+				801EE5B12A00074600DD9ECD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				801EE5BA2A00074600DD9ECD /* PBXTargetDependency */,
+			);
+			name = bffPayUITests;
+			productName = bffPayUITests;
+			productReference = 801EE5B32A00074600DD9ECD /* bffPayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		801EE5C12A00076600DD9ECD /* bffPayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 801EE5C82A00076600DD9ECD /* Build configuration list for PBXNativeTarget "bffPayTests" */;
+			buildPhases = (
+				801EE5BE2A00076600DD9ECD /* Sources */,
+				801EE5BF2A00076600DD9ECD /* Frameworks */,
+				801EE5C02A00076600DD9ECD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				801EE5C72A00076600DD9ECD /* PBXTargetDependency */,
+			);
+			name = bffPayTests;
+			packageProductDependencies = (
+				801EE5CB2A00116200DD9ECD /* FirebaseAuth */,
+				801EE5CD2A00117200DD9ECD /* FirebasePerformance */,
+				801EE5CF2A00118E00DD9ECD /* GoogleSignInSwift */,
+				801EE5D12A00119900DD9ECD /* FirebaseFirestoreSwift */,
+			);
+			productName = bffPayTests;
+			productReference = 801EE5C22A00076600DD9ECD /* bffPayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8044A0E529EED5C500493B7F /* bffPay */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8044A0F429EED5C600493B7F /* Build configuration list for PBXNativeTarget "bffPay" */;
@@ -297,7 +405,6 @@
 				8044A10129EEE05C00493B7F /* FirebaseCrashlytics */,
 				8044A10329EEE05C00493B7F /* FirebaseFirestoreSwift */,
 				8044A10829EEE1E800493B7F /* GoogleSignInSwift */,
-				809265DA29F2B3D9001C36C6 /* SwiftUIFontIcon */,
 				8045F4F129F59C60002F9CB5 /* FirebasePerformance */,
 			);
 			productName = bffPay;
@@ -314,6 +421,14 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					801EE5B22A00074600DD9ECD = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 8044A0E529EED5C500493B7F;
+					};
+					801EE5C12A00076600DD9ECD = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 8044A0E529EED5C500493B7F;
+					};
 					8044A0E529EED5C500493B7F = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -331,18 +446,33 @@
 			packageReferences = (
 				8044A0FE29EEE05C00493B7F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8044A10729EEE1E800493B7F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				809265D929F2B3D8001C36C6 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
 			);
 			productRefGroup = 8044A0E729EED5C500493B7F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8044A0E529EED5C500493B7F /* bffPay */,
+				801EE5B22A00074600DD9ECD /* bffPayUITests */,
+				801EE5C12A00076600DD9ECD /* bffPayTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		801EE5B12A00074600DD9ECD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		801EE5C02A00076600DD9ECD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8044A0E429EED5C500493B7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +486,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		801EE5AF2A00074600DD9ECD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801EE5B82A00074600DD9ECD /* bffPayUITestsLaunchTests.swift in Sources */,
+				801EE5B62A00074600DD9ECD /* bffPayUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		801EE5BE2A00076600DD9ECD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801EE5C52A00076600DD9ECD /* bffPayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8044A0E229EED5C500493B7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,7 +540,94 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		801EE5BA2A00074600DD9ECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8044A0E529EED5C500493B7F /* bffPay */;
+			targetProxy = 801EE5B92A00074600DD9ECD /* PBXContainerItemProxy */;
+		};
+		801EE5C72A00076600DD9ECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8044A0E529EED5C500493B7F /* bffPay */;
+			targetProxy = 801EE5C62A00076600DD9ECD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		801EE5BB2A00074600DD9ECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZQ532X6DQG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bffPay.bffPayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = bffPay;
+			};
+			name = Debug;
+		};
+		801EE5BC2A00074600DD9ECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZQ532X6DQG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bffPay.bffPayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = bffPay;
+			};
+			name = Release;
+		};
+		801EE5C92A00076600DD9ECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZQ532X6DQG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bffPay.bffPayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bffPay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/bffPay";
+			};
+			name = Debug;
+		};
+		801EE5CA2A00076600DD9ECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZQ532X6DQG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bffPay.bffPayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bffPay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/bffPay";
+			};
+			name = Release;
+		};
 		8044A0F229EED5C600493B7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -581,6 +815,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		801EE5BD2A00074600DD9ECD /* Build configuration list for PBXNativeTarget "bffPayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				801EE5BB2A00074600DD9ECD /* Debug */,
+				801EE5BC2A00074600DD9ECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		801EE5C82A00076600DD9ECD /* Build configuration list for PBXNativeTarget "bffPayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				801EE5C92A00076600DD9ECD /* Debug */,
+				801EE5CA2A00076600DD9ECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8044A0E129EED5C500493B7F /* Build configuration list for PBXProject "bffPay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -618,17 +870,29 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		809265D929F2B3D8001C36C6 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/huybuidac/SwiftUIFontIcon";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		801EE5CB2A00116200DD9ECD /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8044A0FE29EEE05C00493B7F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		801EE5CD2A00117200DD9ECD /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8044A0FE29EEE05C00493B7F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		801EE5CF2A00118E00DD9ECD /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8044A10729EEE1E800493B7F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		801EE5D12A00119900DD9ECD /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8044A0FE29EEE05C00493B7F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
 		8044A0FF29EEE05C00493B7F /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8044A0FE29EEE05C00493B7F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -653,11 +917,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8044A0FE29EEE05C00493B7F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
-		};
-		809265DA29F2B3D9001C36C6 /* SwiftUIFontIcon */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 809265D929F2B3D8001C36C6 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
-			productName = SwiftUIFontIcon;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

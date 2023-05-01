@@ -57,10 +57,13 @@ struct CreatePartyView: View {
                         switch selectedAction {
                         case .create:
                             TextField("Name", text: $name)
+                                .accessibilityIdentifier("partyNameTextField")
                             
                             TextField("Description (Optional)", text: $description)
+                                .accessibilityIdentifier("partyDescriptionTextField")
                             
                             TextField("Currency", text: $currency)
+                                .accessibilityIdentifier("partyCurrencyTextField")
                             
                             Picker("Category", selection: $selectedCategory) {
                                 ForEach(PartyCategory.allCases, id: \.self) { category in
@@ -115,6 +118,7 @@ struct CreatePartyView: View {
             } label: {
                 Text("Create")
             }
+            .accessibilityIdentifier("createPartyButton")
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Error"),
                       message: Text("Name and Currency fields are required."),

@@ -28,6 +28,7 @@ struct CustomPlusButton: View {
                 }
         }
         .padding()
+        .accessibilityIdentifier("plusButton")
     }
 }
 
