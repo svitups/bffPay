@@ -10,7 +10,7 @@ import Combine
 
 final class PartyViewModel: ObservableObject, Identifiable {
     @Published var party: Party
-    @Published var debts = [DebtSettlement]()
+    @Published var debts = [Debt]()
     
     var id = ""
     
@@ -24,53 +24,46 @@ final class PartyViewModel: ObservableObject, Identifiable {
             .store(in: &cancellables)
     }
     
-    func resolveDebts(transactions: [Transaction]) {
-        var balances: [String: Double] = [:]
-        let epsilon = 1e-6
-        
-        // Populate initial balances
-        for (id, _) in party.participants {
-            balances[id] = 0.0
-        }
-        
-        print("Initial balances: \(balances)")
-        
-        // Calculate the balances for each participant
+    private func calculateDebts(transactions: [Transaction]) -> [String: Double] {
+        var balance = [String: Double]()
+
         for transaction in transactions {
-            let share = transaction.amount / Double(transaction.paidForIDs.count)
-            balances[transaction.paidByID]! += transaction.amount
+            let splitAmount = transaction.amount / Double(transaction.payeeIDs.count)
             
-            for beneficiary in transaction.paidForIDs {
-                balances[beneficiary]! -= share
+            for payee in transaction.payeeIDs {
+                balance[transaction.payerID, default: 0] += splitAmount
+                balance[payee, default: 0] -= splitAmount
             }
         }
         
-        print("Balances after transactions: \(balances)")
+        return balance
+    }
+
+    func resolveDebts(transactions: [Transaction]) {
+        let balance = calculateDebts(transactions: transactions)
         
-        var debtSettlements: [DebtSettlement] = []
+        var debtors = balance.filter { $0.value < 0 }.map { ($0.key, -$0.value) }
+        var creditors = balance.filter { $0.value > 0 }.map { $0 }
         
-        while true {
-            if let maxDebtor = balances.max(by: { $0.value < $1.value }),
-               let maxCreditor = balances.min(by: { $0.value < $1.value }),
-               maxDebtor.value > epsilon, abs(maxCreditor.value) > epsilon,
-               maxDebtor.key != maxCreditor.key {
-                
-                let transactionAmount = min(abs(maxDebtor.value), abs(maxCreditor.value))
-                
-                debtSettlements.append(DebtSettlement(id: UUID(), fromID: maxCreditor.key, toID: maxDebtor.key, amount: transactionAmount))
-                
-                balances[maxDebtor.key]! -= transactionAmount
-                balances[maxCreditor.key]! += transactionAmount
-                
-//                print("Current debt settlement: \(DebtSettlement(fromID: maxCreditor.key, toID: maxDebtor.key, amount: transactionAmount))")
-                print("Updated balances: \(balances)")
+        var settlements = [Debt]()
+        
+        while !debtors.isEmpty && !creditors.isEmpty {
+            let (debtor, debt) = debtors.removeFirst()
+            let (creditor, credit) = creditors.removeFirst()
+            
+            if debt > credit {
+                settlements.append(Debt(id: UUID(), payer: debtor, payee: creditor, amount: credit))
+                debtors.insert((debtor, debt - credit), at: 0)
+            } else if debt < credit {
+                settlements.append(Debt(id: UUID(), payer: debtor, payee: creditor, amount: debt))
+                creditors.insert((creditor, credit - debt), at: 0)
             } else {
-                break
+                settlements.append(Debt(id: UUID(), payer: debtor, payee: creditor, amount: debt))
             }
         }
         
         DispatchQueue.main.async {
-            self.debts = debtSettlements
+            self.debts = settlements
         }
     }
 }

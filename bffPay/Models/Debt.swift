@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct DebtSettlement: Identifiable {
+struct Debt: Identifiable {
     var id: UUID
     
-    var fromID: String
-    var toID: String
+    var payer: String
+    var payee: String
     var amount: Double
 }

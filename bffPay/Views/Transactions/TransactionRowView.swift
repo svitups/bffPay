@@ -33,7 +33,7 @@ struct TransactionRowView: View {
                 Text("paid by ")
                     .font(.subheadline)
                     .foregroundColor(.gray) +
-                Text(PartyRepository.shared.getNameOfUser(withID: transaction.paidByID, in: transaction.partyID) ?? "Unknown user")
+                Text(PartyRepository.shared.getNameOfUser(withID: transaction.payerID, in: transaction.partyID) ?? "Unknown user")
                     .font(.subheadline)
                     .bold()
                     .foregroundColor(.gray)

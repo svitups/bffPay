@@ -24,8 +24,8 @@ struct TransactionDetailsView: View {
                 .font(.title3)
             
             Form {
-                Section("Paid by \(PartyRepository.shared.getNameOfUser(withID: transaction.paidByID, in: transaction.partyID) ?? "No name") for:") {
-                    ForEach(transaction.paidForIDs, id: \.self) { userID in
+                Section("Paid by \(PartyRepository.shared.getNameOfUser(withID: transaction.payerID, in: transaction.partyID) ?? "No name") for:") {
+                    ForEach(transaction.payeeIDs, id: \.self) { userID in
                         HStack {
                             Text(PartyRepository.shared.getNameOfUser(withID: userID, in: transaction.partyID) ?? "No name")
                             Spacer()
@@ -54,7 +54,7 @@ struct TransactionDetailsView: View {
     }
     
     private func calculatePart() -> Double {
-        let peopleCount = transaction.paidForIDs.count
+        let peopleCount = transaction.payeeIDs.count
         return transaction.amount / Double(peopleCount)
     }
 }

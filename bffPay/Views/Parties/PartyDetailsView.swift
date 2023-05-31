@@ -32,6 +32,15 @@ struct PartyDetailsView: View {
                 
                 debtsTab
                     .tag(PartyTabs.debts)
+                
+                PartySettingsTab(vm: vm)
+                    .tag(PartyTabs.settings)
+            }
+        }
+        .navigationTitle(vm.party.name)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                shareButton
             }
         }
     }
@@ -39,7 +48,7 @@ struct PartyDetailsView: View {
     @State private var shownTab: PartyTabs = .transactions
     
     enum PartyTabs: String, CaseIterable {
-        case transactions, debts
+        case transactions, debts, settings
     }
     
     private var transactionsTab: some View {
@@ -67,12 +76,6 @@ struct PartyDetailsView: View {
         .overlay(CustomPlusButton {
             showCreateTransactionView = true
         }, alignment: .bottomTrailing)
-        .navigationTitle(vm.party.name)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                shareButton
-            }
-        }
         .sheet(isPresented: $showCreateTransactionView) {
             CreateTransactionView(party: vm.party)
                 .environmentObject(transactionsListVM)
@@ -90,7 +93,7 @@ struct PartyDetailsView: View {
         ScrollView {
             ForEach(vm.debts, id: \.id) { debt in
                 HStack(spacing: 0) {
-                    Text(PartyRepository.shared.getNameOfUser(withID: debt.fromID, in: vm.party.id!) ?? "Unknown user")
+                    Text(PartyRepository.shared.getNameOfUser(withID: debt.payer, in: vm.party.id!) ?? "Unknown user")
                     
                     Image(systemName: "arrow.forward")
                         .resizable()
@@ -98,7 +101,7 @@ struct PartyDetailsView: View {
                         .frame(width: 12, height: 12)
                         .padding(.horizontal, 4)
                     
-                    Text(PartyRepository.shared.getNameOfUser(withID: debt.toID, in: vm.party.id!) ?? "Unknown user")
+                    Text(PartyRepository.shared.getNameOfUser(withID: debt.payee, in: vm.party.id!) ?? "Unknown user")
                     
                     Spacer()
                     

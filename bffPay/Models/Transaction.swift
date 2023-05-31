@@ -14,7 +14,7 @@ struct Transaction: Codable, Identifiable {
     var amount: Double
     var currency: String
     var date: Date
-    var paidByID: String
-    var paidForIDs: [String]
+    var payerID: String
+    var payeeIDs: [String]
     var partyID: String
 }

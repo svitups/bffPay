@@ -33,8 +33,9 @@
 		8045F4EF29F599CC002F9CB5 /* PartyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4EE29F599CC002F9CB5 /* PartyRepository.swift */; };
 		8045F4F229F59C60002F9CB5 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 8045F4F129F59C60002F9CB5 /* FirebasePerformance */; };
 		8045F4F429F5B193002F9CB5 /* PartyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045F4F329F5B193002F9CB5 /* PartyViewModel.swift */; };
+		804AC7042A265FD900F9C65A /* PartySettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AC7032A265FD900F9C65A /* PartySettingsTab.swift */; };
 		804E859029F40B4B00CA9A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804E858F29F40B4B00CA9A55 /* GoogleService-Info.plist */; };
-		805154792A042F4D0030C4DC /* DebtSettlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805154782A042F4D0030C4DC /* DebtSettlement.swift */; };
+		805154792A042F4D0030C4DC /* Debt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805154782A042F4D0030C4DC /* Debt.swift */; };
 		809265D829F2B2EB001C36C6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265D729F2B2EB001C36C6 /* AuthView.swift */; };
 		809265E029F2B710001C36C6 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265DF29F2B710001C36C6 /* UserRepository.swift */; };
 		809265E329F2B73C001C36C6 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809265E229F2B73C001C36C6 /* UserInfo.swift */; };
@@ -92,8 +93,9 @@
 		8045F4EA29F59663002F9CB5 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		8045F4EE29F599CC002F9CB5 /* PartyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRepository.swift; sourceTree = "<group>"; };
 		8045F4F329F5B193002F9CB5 /* PartyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewModel.swift; sourceTree = "<group>"; };
+		804AC7032A265FD900F9C65A /* PartySettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartySettingsTab.swift; sourceTree = "<group>"; };
 		804E858F29F40B4B00CA9A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		805154782A042F4D0030C4DC /* DebtSettlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtSettlement.swift; sourceTree = "<group>"; };
+		805154782A042F4D0030C4DC /* Debt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debt.swift; sourceTree = "<group>"; };
 		809265D729F2B2EB001C36C6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		809265DF29F2B710001C36C6 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		809265E229F2B73C001C36C6 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -227,7 +229,7 @@
 				809265E229F2B73C001C36C6 /* UserInfo.swift */,
 				8045F4E629F59228002F9CB5 /* Party.swift */,
 				8045F4EA29F59663002F9CB5 /* Transaction.swift */,
-				805154782A042F4D0030C4DC /* DebtSettlement.swift */,
+				805154782A042F4D0030C4DC /* Debt.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +283,7 @@
 				8045F4DD29F4293D002F9CB5 /* PartyRowView.swift */,
 				8045F4E229F58EEF002F9CB5 /* CreatePartyView.swift */,
 				80B1B0E829F9A71800915CB4 /* PartyDetailsView.swift */,
+				804AC7032A265FD900F9C65A /* PartySettingsTab.swift */,
 			);
 			path = Parties;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				8045F4EF29F599CC002F9CB5 /* PartyRepository.swift in Sources */,
 				8045F4EB29F59663002F9CB5 /* Transaction.swift in Sources */,
 				8045F4E529F591ED002F9CB5 /* PartyListViewModel.swift in Sources */,
+				804AC7042A265FD900F9C65A /* PartySettingsTab.swift in Sources */,
 				809265E729F2BCF2001C36C6 /* UIApplication+UIViewController.swift in Sources */,
 				8045F4DE29F4293D002F9CB5 /* PartyRowView.swift in Sources */,
 				8044A0EC29EED5C500493B7F /* MainView.swift in Sources */,
@@ -537,7 +541,7 @@
 				8044A0EA29EED5C500493B7F /* bffPayApp.swift in Sources */,
 				80B1B0E929F9A71800915CB4 /* PartyDetailsView.swift in Sources */,
 				809265E529F2B951001C36C6 /* AuthService.swift in Sources */,
-				805154792A042F4D0030C4DC /* DebtSettlement.swift in Sources */,
+				805154792A042F4D0030C4DC /* Debt.swift in Sources */,
 				80B1B0F429FABC7100915CB4 /* TransactionsListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,7 +757,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = bffPay/bffPay.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"bffPay/Preview Content\"";
 				DEVELOPMENT_TEAM = SB3RMSAWRB;
 				ENABLE_PREVIEWS = YES;
@@ -769,7 +773,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.svitups.bffPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -788,7 +792,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = bffPay/bffPay.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"bffPay/Preview Content\"";
 				DEVELOPMENT_TEAM = SB3RMSAWRB;
 				ENABLE_PREVIEWS = YES;
@@ -804,7 +808,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.svitups.bffPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

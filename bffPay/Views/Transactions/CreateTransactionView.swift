@@ -78,8 +78,8 @@ struct CreateTransactionView: View {
                                           amount: Double(amount) ?? 0,
                                           currency: party.currency,
                                           date: date,
-                                          paidByID: paidByID,
-                                          paidForIDs: paidForIDs,
+                                          payerID: paidByID,
+                                          payeeIDs: paidForIDs,
                                           partyID: party.id!)
             transactionsListVM.create(transaction) {
                 presentationMode.wrappedValue.dismiss()
